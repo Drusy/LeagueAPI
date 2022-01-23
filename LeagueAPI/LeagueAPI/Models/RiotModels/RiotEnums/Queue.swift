@@ -15,6 +15,7 @@ public class Queue {
         case RankedFlex5V5 = "RANKED_FLEX_SR"
         case RankedFlex3V3 = "RANKED_FLEX_TT"
         case RankedTFT = "RANKED_TFT"
+        case RankedTFTTurbo = "RANKED_TFT_TURBO"
         case Unknown = "Unknown"
         
         public var description: String {
@@ -27,6 +28,8 @@ public class Queue {
                 return "Ranked Flex 3v3"
             case .RankedTFT:
                 return "Ranked TFT"
+            case .RankedTFTTurbo:
+                return "Ranked TFT Turbo"
             case .Unknown:
                 return "Unknown"
             }
@@ -53,6 +56,8 @@ public class Queue {
             self.type = .RankedFlex3V3
         case QueueTypes.RankedTFT.rawValue:
             self.type = .RankedTFT
+        case QueueTypes.RankedTFTTurbo.rawValue:
+            self.type = .RankedTFTTurbo
         default:
             Logger.warning("Queue type \"\(queueType)\" unknown (check for LeagueAPI update)")
             self.type = .Unknown
